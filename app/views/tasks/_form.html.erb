@@ -1,0 +1,38 @@
+<%= simple_form_for(@task) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="span6">
+        <div class="row">
+
+          <div class="span1">
+            <%= f.input :closed %>
+          </div>
+
+          <div class="4">
+            <%= f.input :title %>
+          </div>
+
+        </div>
+
+        <%= f.association :person,
+          label: "Connect To Contact",
+          collection: current_user.people.map { |p| [p.name + " " + p.surname, p.id] }  %>
+
+        <%= f.association :responsible_user,
+          label: "Responsible User",
+          collection: User.all.map { |u| [u.name + " " + u.surname, u.id] } ,
+          include_blank: false %>
+
+        <%= f.input :expires_at, input_html: { class: "span1" }  %>
+
+      </div>
+      <%= f.input :description, :as => :text, input_html: { class: "span4" }, :height => 5 %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

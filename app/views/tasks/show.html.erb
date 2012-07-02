@@ -1,0 +1,34 @@
+<h1>Task</h1>
+
+<p>
+  <b>Title</b><br>
+  <%= @task.title %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Responsible</b><br>
+  <%= link_to @task.responsible_user.name + " " + @task.responsible_user.surname, user_path(@task.responsible_user) %>
+</p>
+
+<% if @task.person %>
+  <p>
+    <b>Connected Contact</b><br>
+    <%= link_to @task.person.name + " " + @task.person.surname, person_path(@task.person) %>
+  </p>
+<% end -%>
+
+<p>
+  <b>Closed</b><br>
+  <%= @task.closed %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', tasks_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_task_path(@task), :class => 'btn' %>
+  <%= link_to 'Delete', task_path(@task), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

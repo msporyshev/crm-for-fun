@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  hashed_pass: MyString
+  name: MyString
+  surname: MyString
+  secure_id: MyString
+  role: MyString
+  expires_at: 2012-07-02 08:45:16
+
+two:
+  email: MyString
+  hashed_pass: MyString
+  name: MyString
+  surname: MyString
+  secure_id: MyString
+  role: MyString
+  expires_at: 2012-07-02 08:45:16

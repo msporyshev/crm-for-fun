@@ -1,0 +1,22 @@
+<%= simple_form_for(@person) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="span3">
+        <%= f.input :name %>
+        <%= f.input :surname, label: "Second Name" %>
+        <%= f.input :email, :placeholder => 'user@domain.com'  %>
+        <%= f.input :address %>
+        <%= f.input :phone_num, label: "Phone Number" %>
+      </div>
+      <div class="span3">
+        <%= f.input :description %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

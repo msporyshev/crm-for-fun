@@ -1,0 +1,33 @@
+<h1>Contact</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @person.name %>
+  <%= @person.surname %>
+</p>
+
+<p>
+  <b>Email</b><br>
+  <%= @person.email %>
+</p>
+
+<p>
+  <b>Address</b><br>
+  <%= @person.address %>
+</p>
+
+<p>
+  <b>Phone Number</b><br>
+  <%= @person.phone_num %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @person.description %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', people_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_person_path(@person), :class => 'btn' %>
+  <%= link_to 'Delete', person_path(@person), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

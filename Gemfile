@@ -8,6 +8,7 @@ gem 'rails', '3.2.2'
 gem 'mysql2'
 
 gem 'will_paginate'
+gem 'simple_form'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,9 +19,9 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
 end
 
-gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
