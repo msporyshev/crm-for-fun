@@ -2,7 +2,7 @@ class CasesController < ApplicationController
   # GET /cases
   # GET /cases.json
   def index
-    @cases = Case.all
+    @cases = current_user.cases
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class CasesController < ApplicationController
   # GET /cases/new
   # GET /cases/new.json
   def new
-    @case = Case.new
+    @case = current_user.cases.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,7 @@ class CasesController < ApplicationController
   # POST /cases
   # POST /cases.json
   def create
-    @case = Case.new(params[:case])
+    @case = current_user.cases.new(params[:case])
 
     respond_to do |format|
       if @case.save

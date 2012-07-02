@@ -1,5 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Case</h1>
 
+<p>
+  <b>Title</b><br>
+  <%= @case.title %>
+</p>
 
-<%= link_to 'Edit', edit_case_path(@case) %> |
-<%= link_to 'Back', cases_path %>
+<div class="form-actions">
+  <%= link_to 'Back', cases_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_case_path(@case), :class => 'btn' %>
+  <%= link_to 'Delete', case_path(@case), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

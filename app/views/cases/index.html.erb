@@ -1,21 +1,22 @@
-<h1>Listing cases</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cases.each do |case| %>
-  <tr>
-    <td><%= link_to 'Show', case %></td>
-    <td><%= link_to 'Edit', edit_case_path(case) %></td>
-    <td><%= link_to 'Destroy', case, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Users</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cases.each do |_case| %>
+      <tr>
+        <td><%= _case.title %></td>
+        <td>
+          <%= link_to 'Edit', edit_case_path(_case), :class => 'btn btn-mini' %>
+          <%= link_to 'Delete', case_path(_case), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Case', new_case_path %>
+<%= link_to 'New', new_case_path, :class => 'btn btn-primary' %>
