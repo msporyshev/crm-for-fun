@@ -9,7 +9,7 @@
   <tbody>
     <% @cases.each do |_case| %>
       <tr>
-        <td><%= _case.title %></td>
+        <td><%= link_to _case.title, case_path(_case) %></td>
         <td>
           <%= link_to 'Edit', edit_case_path(_case), :class => 'btn btn-mini' %>
           <%= link_to 'Delete', case_path(_case), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
