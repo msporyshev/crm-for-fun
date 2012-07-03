@@ -2,7 +2,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Closed</th>
+      <th>Status</th>
       <th>Title</th>
       <th>Contact</th>
       <th>Actions</th>
@@ -11,7 +11,14 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.closed %></td>
+        <td>
+          <%= select_tag(
+            nil,
+            options_for_select([["opened", false], ["closed", true]], task.closed),
+            class: 'span2 opened_closed_select',
+            id: task.id.to_s
+          ) %>
+        </td>
         <td><%= link_to task.title, task_path(task) %></td>
         <td><%= task.person ? link_to(task.person.name + " " + task.person.surname, person_path(task.person)) : nil %></td>
         <td>

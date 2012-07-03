@@ -4,6 +4,13 @@
   <b>Title</b><br>
   <%= @case.title %>
 </p>
+<div>
+  <b>Add Participants</b><br>
+  <%= select_tag nil ,
+    options_for_select(current_user.people.map { |p| [p.name + " " + p.surname, p.id] }),
+    class: "participant_select",
+    id: @case.id %>
+</div>
 
 <div class="form-actions">
   <%= link_to 'Back', cases_path, :class => 'btn'  %>

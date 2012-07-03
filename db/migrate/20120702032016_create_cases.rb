@@ -4,6 +4,8 @@ class CreateCases < ActiveRecord::Migration
       t.string :title
       t.boolean :closed
       t.integer :user_id
+
+      t.timestamps
     end
   end
 end

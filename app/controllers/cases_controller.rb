@@ -2,7 +2,7 @@ class CasesController < ApplicationController
   # GET /cases
   # GET /cases.json
   def index
-    @cases = current_user.cases
+    @cases = current_user.cases.order("created_at ASC")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -23,8 +23,12 @@
 <% end -%>
 
 <p>
-  <b>Closed</b><br>
-  <%= @task.closed %>
+  <b>Status</b><br>
+  <% if @task.closed %>
+    <p>Closed</p>
+  <% else %>
+    <p>Opened</p>
+  <% end %>
 </p>
 
 <div class="form-actions">

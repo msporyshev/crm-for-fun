@@ -4,17 +4,8 @@
   <div class="form-inputs">
     <div class="row">
       <div class="span6">
-        <div class="row">
 
-          <div class="span1">
-            <%= f.input :closed %>
-          </div>
-
-          <div class="4">
-            <%= f.input :title %>
-          </div>
-
-        </div>
+        <%= f.input :title %>
 
         <%= f.association :person,
           label: "Connect To Contact",

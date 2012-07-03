@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :redirect_to_sign_in_page_if_not_signed_in, :only => [:new, :create]
+
   # GET /users
   # GET /users.json
   def index
