@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = Task.new
+    @task = params[:case_id] ? Case.find(params[:case_id]).tasks.new : Task.new
 
     respond_to do |format|
       format.html # new.html.erb

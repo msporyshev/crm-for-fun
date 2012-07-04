@@ -4,15 +4,25 @@
   <b>Title</b><br>
   <%= @case.title %>
 </p>
-<div>
-  <b>Add Participants</b><br>
-  <%= select_tag nil ,
-    options_for_select(current_user.people.map { |p| [p.name + " " + p.surname, p.id] }),
-    class: "participant_select",
-    id: @case.id %>
+
+<div class="row">
+  <div class="span3">
+    <b>Participants</b><br>
+    <% @case.people.each do |p| %>
+      <%= link_to p.name + " " + p.surname, person_path(p) %><br>
+    <% end %>
+  </div>
+
+  <div class="span3">
+    <b>Tasks</b><br>
+    <% @case.tasks.each do |t| %>
+      <%= link_to t.title, task_path(t) %><br>
+    <% end %>
+  </div>
 </div>
 
 <div class="form-actions">
+  <%= link_to 'Add Task', new_case_task_path(@case), :class => 'btn' %>
   <%= link_to 'Back', cases_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_case_path(@case), :class => 'btn' %>
   <%= link_to 'Delete', case_path(@case), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>

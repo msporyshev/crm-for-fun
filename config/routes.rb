@@ -1,6 +1,11 @@
 CrmApp::Application.routes.draw do
 
+  resources :cases do
+    resources :tasks
+  end
+
   resources :users, :sessions, :people, :tasks, :cases
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
