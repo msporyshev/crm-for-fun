@@ -4,7 +4,7 @@ CrmApp::Application.routes.draw do
     resources :tasks
   end
 
-  resources :users, :sessions, :people, :tasks, :cases
+  resources :users, :sessions, :people, :tasks
 
 
   # The priority is based upon order of creation:

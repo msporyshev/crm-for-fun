@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks.order("created_at ASC")
+    @tasks = current_user.tasks.order("closed DESC, created_at ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,12 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html do
+            redirect_to(
+              (params[:task][:case_id].blank? ? @task : case_path(params[:task][:case_id])),
+              notice: 'Task was successfully created.'
+            )
+        end
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }
@@ -76,7 +81,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to tasks_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end

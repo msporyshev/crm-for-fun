@@ -5,21 +5,17 @@
   <%= @case.title %>
 </p>
 
-<div class="row">
-  <div class="span3">
-    <b>Participants</b><br>
-    <% @case.people.each do |p| %>
-      <%= link_to p.name + " " + p.surname, person_path(p) %><br>
-    <% end %>
-  </div>
+<p>
+  <h3>Participants</h3>
+  <% @case.people.each do |p| %>
+    <%= link_to p.name + " " + p.surname, person_path(p) %><br>
+  <% end %>
+</p>
 
-  <div class="span3">
-    <b>Tasks</b><br>
-    <% @case.tasks.each do |t| %>
-      <%= link_to t.title, task_path(t) %><br>
-    <% end %>
-  </div>
-</div>
+<p>
+  <h3>Tasks</h3>
+  <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @case.tasks} %>
+</p>
 
 <div class="form-actions">
   <%= link_to 'Add Task', new_case_task_path(@case), :class => 'btn' %>

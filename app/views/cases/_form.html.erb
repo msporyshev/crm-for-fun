@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.association :people,
+      label: "Paticipants"
       input_html: {class: "ch_select"},
       collection: current_user.people.map { |p| [p.name + " " + p.surname, p.id] } %>
   </div>
