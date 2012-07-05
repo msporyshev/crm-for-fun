@@ -9,9 +9,7 @@ CrmApp::Application.routes.draw do
     resources :documents
   end
 
-  match 'documents' => 'documents#create', :via => "post"
-
-  resources :users, :sessions, :people, :tasks
+  resources :users, :sessions, :people, :tasks, :documents
 
   # match ':parent/:parent_id/'
 
