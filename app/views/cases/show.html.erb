@@ -17,8 +17,14 @@
   <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @case.tasks} %>
 </p>
 
+<p>
+  <h3>Documents</h3>
+  <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @case.documents} %>
+</p>
+
 <div class="form-actions">
   <%= link_to 'Add Task', new_case_task_path(@case), :class => 'btn' %>
+  <%= link_to 'Add Document', new_case_document_path(@case), :class => 'btn' %>
   <%= link_to 'Back', cases_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_case_path(@case), :class => 'btn' %>
   <%= link_to 'Delete', case_path(@case), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>

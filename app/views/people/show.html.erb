@@ -35,8 +35,13 @@
   </div>
 </div>
 
+<p>
+  <h3>Documents</h3>
+  <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @person.documents} %>
+</p>
 
 <div class="form-actions">
+  <%= link_to "Add Document", new_person_document_path(@person) %>
   <%= link_to 'Back', people_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_person_path(@person), :class => 'btn' %>
   <%= link_to 'Delete', person_path(@person), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>

@@ -2,10 +2,18 @@ CrmApp::Application.routes.draw do
 
   resources :cases do
     resources :tasks
+    resources :documents
   end
+
+  resources :people do
+    resources :documents
+  end
+
+  match 'documents' => 'documents#create', :via => "post"
 
   resources :users, :sessions, :people, :tasks
 
+  # match ':parent/:parent_id/'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

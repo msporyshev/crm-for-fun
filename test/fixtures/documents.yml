@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  case_id: 1
+  file: MyString
+
+two:
+  person_id: 1
+  case_id: 1
+  file: MyString
