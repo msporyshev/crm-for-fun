@@ -14,7 +14,7 @@
         <td><%= person.email %></td>
         <td>
           <%= link_to 'Edit', edit_person_path(person), :class => 'btn btn-mini' %>
-          <%= link_to 'Delete', people_path(person), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Delete', person_path(person), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
