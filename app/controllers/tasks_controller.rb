@@ -27,7 +27,8 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = params[:case_id] ? Case.find(params[:case_id]).tasks.new : Task.new
+    @task = @document = Task.new(
+      case_or_person_association(:task) => params[case_or_person_association(:task)])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,12 +48,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html do
-            redirect_to(
-              (params[:task][:case_id].blank? ? @task : case_path(params[:task][:case_id])),
-              notice: 'Task was successfully created.'
-            )
-        end
+        format.html { redirect_to case_or_person_assoc_path(:task), notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }
@@ -88,4 +84,5 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

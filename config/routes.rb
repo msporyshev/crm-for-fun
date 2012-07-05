@@ -6,6 +6,7 @@ CrmApp::Application.routes.draw do
   end
 
   resources :people do
+    resources :tasks
     resources :documents
   end
 

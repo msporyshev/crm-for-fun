@@ -4,16 +4,28 @@
 		"selected_items":
 		[
 			[
+				"assoc",
+				"assoc_path"
+			],
+			[
+				"ass",
+				"association"
+			],
+			[
+				"do",
+				"documents"
+			],
+			[
+				"all",
+				"allow_blank"
+			],
+			[
 				"case",
 				"case_id"
 			],
 			[
 				"if",
 				"ife	if … else … end"
-			],
-			[
-				"do",
-				"do"
 			],
 			[
 				"red",
@@ -412,10 +424,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/tasks/_tasks.html.erb",
+			"file": "app/controllers/documents_controller.rb",
 			"settings":
 			{
-				"buffer_size": 1170,
+				"buffer_size": 1466,
 				"line_ending": "Unix"
 			}
 		},
@@ -423,15 +435,23 @@
 			"file": "app/controllers/tasks_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2172,
+				"buffer_size": 2103,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/tasks/index.html.erb",
+			"file": "app/controllers/application_controller.rb",
 			"settings":
 			{
-				"buffer_size": 168,
+				"buffer_size": 1132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/people/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 1191,
 				"line_ending": "Unix"
 			}
 		}
@@ -500,26 +520,40 @@
 	},
 	"file_history":
 	[
+		"/home/max/study/projects/rails_apps/crm_app/config/routes.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/models/task.rb",
+		"/home/max/study/projects/rails_apps/crm_app/test/functional/tasks_controller_test.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/models/document.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/_documents.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/models/case.rb",
 		"/home/max/study/projects/rails_apps/crm_app/.gitignore",
-		"/home/max/study/projects/rails_apps/crm_app/app/controllers/cases_controller.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/people/show.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_people.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/controllers/people_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/controllers/documents_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/models/person.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/show.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/tasks_controller.rb",
-		"/home/max/study/projects/rails_apps/crm_app/config/routes.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/_form.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_people.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/people/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/_form.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/show.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/edit.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/documents/new.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/uploaders/document_uploader.rb",
+		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120705003938_create_documents.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/_tasks.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/index.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/Gemfile",
+		"/home/max/study/projects/rails_apps/crm_app/app/controllers/cases_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/_form.html.erb",
 		"/home/max/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/application.js",
-		"/home/max/study/projects/rails_apps/crm_app/app/models/case.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/tasks.js.coffee",
 		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/cases.js.coffee",
 		"/home/max/study/projects/rails_apps/crm_app/app/assets/stylesheets/application.css",
-		"/home/max/study/projects/rails_apps/crm_app/Gemfile",
 		"/home/max/study/projects/rails_apps/crm_app/config/application.rb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120704041454_create_cases_people.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/sessions_controller.rb",
@@ -530,15 +564,12 @@
 		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702012751_create_tasks.rb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702032016_create_cases.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/controllers/people_controller.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/application_controller.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/layouts/application.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/application/_navbar_manager.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/Gemfile.lock",
 		"/home/max/study/projects/rails_apps/crm_app/config/database.yml",
 		"/home/max/study/projects/rails_apps/crm_app/app/models/user.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/models/task.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/models/person.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/users/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/new.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/edit.html.erb",
@@ -616,18 +647,7 @@
 		"/home/max/study/projects/rails_apps/store/db/migrate/20120314101946_create_products.rb",
 		"/home/max/study/projects/rails_apps/store/app/views/admin/reports/show.html.erb",
 		"/home/max/study/projects/rails_apps/store/app/controllers/sessions_controller.rb",
-		"/home/max/study/projects/rails_apps/store/app/helpers/admin/geo_helper.rb",
-		"/home/max/study/projects/rails_apps/store/app/models/rating.rb",
-		"/home/max/study/projects/rails_apps/store/app/views/users/show.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/products/show.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/comments/show.js.erb",
-		"/home/max/study/projects/rails_apps/store/app/controllers/comments_controller.rb",
-		"/home/max/study/projects/rails_apps/store/app/views/application/_users_search_form.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/users/index.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/application/_users_search_form_fields.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/application/_products_search_form.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/admin/users/index.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/categories/index.html.erb"
+		"/home/max/study/projects/rails_apps/store/app/helpers/admin/geo_helper.rb"
 	],
 	"find":
 	{
@@ -646,6 +666,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"association",
+			"case_or_person_association",
+			"(case",
+			"_case",
 			"div",
 			"b",
 			"h4",
@@ -769,11 +793,7 @@
 			"@",
 			"header_type",
 			"columns",
-			"columns_field",
-			"_data",
-			"_coord",
-			"f",
-			"s"
+			"columns_field"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -800,51 +820,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/tasks/_tasks.html.erb",
+					"file": "app/controllers/documents_controller.rb",
 					"settings":
 					{
-						"buffer_size": 1170,
+						"buffer_size": 1466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								635,
-								635
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/tasks_controller.rb",
-					"settings":
-					{
-						"buffer_size": 2172,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								288,
-								288
+								1455,
+								1455
 							]
 						],
 						"settings":
@@ -854,33 +846,91 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/views/tasks/index.html.erb",
+					"buffer": 1,
+					"file": "app/controllers/tasks_controller.rb",
 					"settings":
 					{
-						"buffer_size": 168,
+						"buffer_size": 2103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								1014,
+								1014
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/application_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/people/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 1191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								885,
+								885
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -930,12 +980,84 @@
 		"selected_items":
 		[
 			[
-				"tasks/inde",
-				"app/views/tasks/index.html.erb"
+				"task",
+				"app/models/task.rb"
+			],
+			[
+				"applica",
+				"app/controllers/application_controller.rb"
 			],
 			[
 				"tasks",
 				"app/controllers/tasks_controller.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"docume",
+				"app/controllers/documents_controller.rb"
+			],
+			[
+				"ro",
+				"config/routes.rb"
+			],
+			[
+				"docum",
+				"app/models/document.rb"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"cas",
+				"app/models/case.rb"
+			],
+			[
+				"task.rb",
+				"app/models/task.rb"
+			],
+			[
+				"people",
+				"app/controllers/people_controller.rb"
+			],
+			[
+				"documents_co",
+				"app/controllers/documents_controller.rb"
+			],
+			[
+				"tas",
+				"app/controllers/tasks_controller.rb"
+			],
+			[
+				"rotes",
+				"config/routes.rb"
+			],
+			[
+				"person",
+				"app/models/person.rb"
+			],
+			[
+				"case",
+				"app/models/case.rb"
+			],
+			[
+				"documents/",
+				"app/views/documents/_form.html.erb"
+			],
+			[
+				"create",
+				"db/migrate/20120705003938_create_documents.rb"
+			],
+			[
+				"gefile",
+				"Gemfile"
+			],
+			[
+				"tasks/inde",
+				"app/views/tasks/index.html.erb"
 			],
 			[
 				"tasks/",
@@ -970,20 +1092,12 @@
 				"app/views/cases/show.html.erb"
 			],
 			[
-				"case",
-				"app/models/case.rb"
-			],
-			[
 				"appl",
 				"app/assets/javascripts/application.js"
 			],
 			[
 				"gemf",
 				"Gemfile"
-			],
-			[
-				"create",
-				"db/migrate/20120704041454_create_cases_people.rb"
 			],
 			[
 				"cases/form",
@@ -996,10 +1110,6 @@
 			[
 				"sessio",
 				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"routes",
-				"config/routes.rb"
 			],
 			[
 				"ta",
@@ -1030,14 +1140,6 @@
 				"app/controllers/sessions_controller.rb"
 			],
 			[
-				"people",
-				"app/controllers/people_controller.rb"
-			],
-			[
-				"git",
-				".gitignore"
-			],
-			[
 				"route",
 				"config/routes.rb"
 			],
@@ -1064,10 +1166,6 @@
 			[
 				"perso",
 				"app/models/person.rb"
-			],
-			[
-				"task",
-				"app/models/task.rb"
 			],
 			[
 				"user",
@@ -1262,10 +1360,6 @@
 				"app/views/admin/users/_user_short_info.html.erb"
 			],
 			[
-				"applica",
-				"app/controllers/application_controller.rb"
-			],
-			[
 				"geo",
 				"app/controllers/admin/geo_controller.rb"
 			],
@@ -1396,50 +1490,6 @@
 			[
 				"application.html",
 				"app/views/layouts/application.html.erb"
-			],
-			[
-				"layouts/",
-				"app/views/layouts/application.html.erb"
-			],
-			[
-				"for",
-				"app/views/categories/_form.html.erb"
-			],
-			[
-				"js.erb",
-				"app/views/carts/show.js.erb"
-			],
-			[
-				"comments_c",
-				"app/controllers/comments_controller.rb"
-			],
-			[
-				"addratu",
-				"db/migrate/20120520014432_add_rating_to_products.rb"
-			],
-			[
-				"ratings",
-				"app/controllers/ratings_controller.rb"
-			],
-			[
-				"craterati",
-				"db/migrate/20120520012606_create_ratings.rb"
-			],
-			[
-				"produ",
-				"app/models/product.rb"
-			],
-			[
-				"comment.rb",
-				"app/models/comment.rb"
-			],
-			[
-				"alte",
-				"app/views/comments/_cur_product_comments_alter.html.erb"
-			],
-			[
-				"a",
-				"app/helpers/application_helper.rb"
 			]
 		],
 		"width": 0.0

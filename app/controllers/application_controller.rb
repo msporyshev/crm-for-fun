@@ -25,4 +25,22 @@ class ApplicationController < ActionController::Base
         redirect_to new_session_path
       end
     end
+
+    def case_or_person_assoc_path(model_name)
+      methods = { :case_id => method(:case_path),
+        :person_id => method(:person_path),
+        :none => method(:tasks_path) }
+
+      methods[case_or_person_association(model_name)].
+        call(params[model_name][case_or_person_association(model_name)])
+    end
+
+    def case_or_person_association(model_name)
+      [:case_id, :person_id].each { |e|
+        return e if params[e]
+        return e if !params[model_name].nil? and !params[model_name][e].blank?
+      }
+
+      return :none
+    end
 end

@@ -2,7 +2,8 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.where(association => params[association])
+    @documents = Document.where(
+      case_or_person_association(:document) => params[case_or_person_association(:document)])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,8 @@ class DocumentsController < ApplicationController
   # GET /documents/new
   # GET /documents/new.json
   def new
-    @document = Document.new(association => params[association])
+    @document = Document.new(
+      case_or_person_association(:document) => params[case_or_person_association(:document)])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -29,7 +31,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.save
         format.html {
-          redirect_to assoc_path, notice: 'Document was successfully created.'
+          redirect_to case_or_person_assoc_path(:document), notice: 'Document was successfully created.'
         }
         format.json { render json: @document, status: :created, location: @document }
       else
@@ -50,20 +52,4 @@ class DocumentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
-
-    def assoc_path
-      methods = { :case_id => method(:case_path), :person_id => method(:person_path) }
-
-      methods[association].call(params[:document][association])
-    end
-
-    def association
-      if params[:case_id] or params[:person_id]
-        params[:case_id] ? :case_id : :person_id
-      else
-        params[:document][:case_id] ? :case_id : :person_id
-      end
-    end
 end
