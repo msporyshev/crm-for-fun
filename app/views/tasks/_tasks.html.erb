@@ -18,8 +18,18 @@
             id: task.id.to_s
           ) %>
         </td>
-        <td><%= link_to task.title, task_path(task) %></td>
-        <td><%= task.person ? link_to(task.person.name + " " + task.person.surname, person_path(task.person)) : nil %></td>
+        <td>
+          <%= link_to task.title, task_path(task) %><br>
+          <%= task.expires_at %>
+        </td>
+        <td>
+          <% if task.case %>
+            Case:
+            <%= link_to " " + task.case.title, case_path(task.case) %>
+            <br>
+          <% end %>
+          <%= task.person ? link_to(task.person.name + " " + task.person.surname, person_path(task.person)) : nil %>
+        </td>
         <td>
           <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-mini' %>
           <%= link_to 'Delete', task_path(task), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

@@ -2,7 +2,10 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks.order("closed DESC, created_at ASC")
+    @tasks = current_user.
+      tasks.
+      order("closed DESC, created_at ASC").
+      paginate(page: params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # index.html.erb

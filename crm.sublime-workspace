@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"case",
+				"case_id"
+			],
+			[
+				"if",
+				"ife	if … else … end"
+			],
+			[
+				"do",
+				"do"
+			],
+			[
 				"red",
 				"redirect_to_sign_in_page_if_not_signed_in"
 			],
@@ -50,10 +62,6 @@
 			[
 				"get",
 				"gmaps_get_geocode"
-			],
-			[
-				"do",
-				"dob	Insert do |variable| … end"
 			],
 			[
 				"response",
@@ -236,10 +244,6 @@
 				"categories"
 			],
 			[
-				"if",
-				"if	if … end"
-			],
-			[
 				"sho",
 				"should"
 			],
@@ -408,50 +412,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/assets/javascripts/cases.js.coffee",
+			"file": "app/views/tasks/_tasks.html.erb",
 			"settings":
 			{
-				"buffer_size": 452,
+				"buffer_size": 1170,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/cases/show.html.erb",
+			"file": "app/controllers/tasks_controller.rb",
 			"settings":
 			{
-				"buffer_size": 548,
+				"buffer_size": 2172,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/tasks.js.coffee",
+			"file": "app/views/tasks/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 452,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 1843,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/sessions_controller.rb",
-			"settings":
-			{
-				"buffer_size": 621,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/sessions/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 662,
+				"buffer_size": 168,
 				"line_ending": "Unix"
 			}
 		}
@@ -520,29 +500,41 @@
 	},
 	"file_history":
 	[
-		"/home/max/study/projects/rails_apps/crm_app/app/models/case.rb",
-		"/home/max/study/projects/rails_apps/crm_app/db/schema.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/show.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/.gitignore",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/cases_controller.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/controllers/users_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/show.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/show.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/tasks_controller.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/show.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_form.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/config/routes.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/_form.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_people.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/_tasks.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/index.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/index.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/_form.html.erb",
+		"/home/max/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/application.js",
+		"/home/max/study/projects/rails_apps/crm_app/app/models/case.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/tasks.js.coffee",
+		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/cases.js.coffee",
+		"/home/max/study/projects/rails_apps/crm_app/app/assets/stylesheets/application.css",
+		"/home/max/study/projects/rails_apps/crm_app/Gemfile",
+		"/home/max/study/projects/rails_apps/crm_app/config/application.rb",
+		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120704041454_create_cases_people.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/controllers/sessions_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/sessions/new.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/db/schema.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/controllers/users_controller.rb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/show.html.erb",
+		"/home/max/study/projects/rails_apps/crm_app/app/views/people/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702012751_create_tasks.rb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702032016_create_cases.rb",
-		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/tasks.js.coffee",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/_form.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/controllers/sessions_controller.rb",
-		"/home/max/study/projects/rails_apps/crm_app/config/routes.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/people_controller.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/application_controller.rb",
-		"/home/max/study/projects/rails_apps/crm_app/.gitignore",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/layouts/application.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/application/_navbar_manager.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/Gemfile.lock",
-		"/home/max/study/projects/rails_apps/crm_app/Gemfile",
 		"/home/max/study/projects/rails_apps/crm_app/config/database.yml",
 		"/home/max/study/projects/rails_apps/crm_app/app/models/user.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/models/task.rb",
@@ -550,12 +542,9 @@
 		"/home/max/study/projects/rails_apps/crm_app/app/views/users/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/new.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/edit.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/cases/_form.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702071449_add_case_id_to_tasks.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/edit.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/tasks/new.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/people/show.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/people/index.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/users/index.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/users/show.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120702003746_create_people.rb",
@@ -563,16 +552,11 @@
 		"/home/max/study/projects/rails_apps/crm_app/app/views/people/new.html.erb",
 		"/home/max/study/projects/rails_apps/crm_app/app/controllers/crm_controller.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/crm/index.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/app/views/sessions/new.html.erb",
-		"/home/max/study/projects/rails_apps/crm_app/config/application.rb",
 		"/home/max/study/projects/rails_apps/crm_app/db/migrate/20120701214516_create_users.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/assets/stylesheets/bootstrap_and_overrides.css.less",
-		"/home/max/study/projects/rails_apps/crm_app/app/assets/stylesheets/application.css",
-		"/home/max/study/projects/rails_apps/crm_app/app/assets/javascripts/application.js",
 		"/home/max/study/projects/rails_apps/crm_app/config/initializers/simple_form.rb",
 		"/home/max/study/projects/rails_apps/crm_app/app/views/users/edit.html.erb",
 		"/home/max/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
-		"/home/max/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/max/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/max/study/projects/rails_apps/store/app/controllers/admin/orders_controller.rb",
 		"/home/max/study/projects/rails_apps/store/app/controllers/application_controller.rb",
@@ -643,11 +627,7 @@
 		"/home/max/study/projects/rails_apps/store/app/views/application/_users_search_form_fields.html.erb",
 		"/home/max/study/projects/rails_apps/store/app/views/application/_products_search_form.html.erb",
 		"/home/max/study/projects/rails_apps/store/app/views/admin/users/index.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/categories/index.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/views/users/edit.html.erb",
-		"/home/max/study/projects/rails_apps/store/app/assets/javascripts/admin/geo.js.coffee",
-		"/home/max/study/projects/rails_apps/store/app/assets/stylesheets/gmaps4rails.css",
-		"/home/max/study/projects/rails_apps/store/app/assets/javascripts/yandex-maps/y_maps_api_2.js"
+		"/home/max/study/projects/rails_apps/store/app/views/categories/index.html.erb"
 	],
 	"find":
 	{
@@ -655,7 +635,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 91.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -666,6 +646,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"div",
+			"b",
+			"h4",
+			"div",
+			"task_path",
+			"span4",
+			"<div>",
+			"p>",
+			"next",
+			"skip",
+			"p",
 			"second_name",
 			"second name",
 			"Second Name",
@@ -782,18 +773,7 @@
 			"_data",
 			"_coord",
 			"f",
-			"s",
-			"second_",
-			"first",
-			"second_",
-			"first_",
-			"nil",
-			"set_categories_header_to_reports",
-			"set_dates_header_to_reports",
-			"raw_reports",
-			"set_total_prices_header_to_reports",
-			"set_users_header_to_reports",
-			"first_field"
+			"s"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -820,28 +800,30 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/javascripts/cases.js.coffee",
+					"file": "app/views/tasks/_tasks.html.erb",
 					"settings":
 					{
-						"buffer_size": 452,
+						"buffer_size": 1170,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								308,
-								308
+								635,
+								635
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CoffeeScript/Syntaxes/CoffeeScript.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -851,135 +833,51 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/cases/show.html.erb",
+					"file": "app/controllers/tasks_controller.rb",
 					"settings":
 					{
-						"buffer_size": 548,
+						"buffer_size": 2172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								122,
-								122
+								288,
+								288
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 18.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/assets/javascripts/tasks.js.coffee",
+					"file": "app/views/tasks/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 452,
+						"buffer_size": 168,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								452,
-								452
+								98,
+								98
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CoffeeScript/Syntaxes/CoffeeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 1843,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								54,
-								54
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/sessions_controller.rb",
-					"settings":
-					{
-						"buffer_size": 621,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/sessions/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 662,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1032,16 +930,72 @@
 		"selected_items":
 		[
 			[
+				"tasks/inde",
+				"app/views/tasks/index.html.erb"
+			],
+			[
+				"tasks",
+				"app/controllers/tasks_controller.rb"
+			],
+			[
+				"tasks/",
+				"app/views/tasks/_tasks.html.erb"
+			],
+			[
+				".git",
+				".gitignore"
+			],
+			[
+				"cases",
+				"app/controllers/cases_controller.rb"
+			],
+			[
+				"people/",
+				"app/views/people/index.html.erb"
+			],
+			[
+				"form",
+				"app/views/cases/_form.html.erb"
+			],
+			[
+				"tasks/form",
+				"app/views/tasks/_form.html.erb"
+			],
+			[
+				"cases/inde",
+				"app/views/cases/index.html.erb"
+			],
+			[
+				"cases/show",
+				"app/views/cases/show.html.erb"
+			],
+			[
+				"case",
+				"app/models/case.rb"
+			],
+			[
+				"appl",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"create",
+				"db/migrate/20120704041454_create_cases_people.rb"
+			],
+			[
+				"cases/form",
+				"app/views/cases/_form.html.erb"
+			],
+			[
 				"sessions/",
 				"app/views/sessions/new.html.erb"
 			],
 			[
 				"sessio",
 				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"case",
-				"app/models/case.rb"
 			],
 			[
 				"routes",
@@ -1056,16 +1010,8 @@
 				"app/views/cases/show.html.erb"
 			],
 			[
-				"cases",
-				"app/assets/javascripts/cases.js.coffee"
-			],
-			[
 				"schema",
 				"db/schema.rb"
-			],
-			[
-				"tasks",
-				"app/controllers/tasks_controller.rb"
 			],
 			[
 				"ses",
@@ -1080,16 +1026,8 @@
 				"app/assets/javascripts/tasks.js.coffee"
 			],
 			[
-				"tasks/",
-				"app/views/tasks/index.html.erb"
-			],
-			[
 				"sess",
 				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"appl",
-				"app/controllers/application_controller.rb"
 			],
 			[
 				"people",
@@ -1476,10 +1414,6 @@
 				"app/controllers/comments_controller.rb"
 			],
 			[
-				"create",
-				"db/migrate/20120520012606_create_ratings.rb"
-			],
-			[
 				"addratu",
 				"db/migrate/20120520014432_add_rating_to_products.rb"
 			],
@@ -1506,42 +1440,6 @@
 			[
 				"a",
 				"app/helpers/application_helper.rb"
-			],
-			[
-				"cre",
-				"db/migrate/20120516115349_create_comments.rb"
-			],
-			[
-				"css",
-				"app/assets/stylesheets/application.css"
-			],
-			[
-				"products/sho",
-				"app/views/products/show.html.erb"
-			],
-			[
-				"product.js",
-				"app/assets/javascripts/admin/products.js.coffee"
-			],
-			[
-				"products/",
-				"app/views/products/show.html.erb"
-			],
-			[
-				"glo",
-				"app/views/application/_global_search_form.html.erb"
-			],
-			[
-				"_se",
-				"app/views/application/_products_search_form_fields.html.erb"
-			],
-			[
-				"admin/users/",
-				"app/views/admin/users/index.html.erb"
-			],
-			[
-				"/views/comm",
-				"app/views/comments/index.html.erb"
 			]
 		],
 		"width": 0.0

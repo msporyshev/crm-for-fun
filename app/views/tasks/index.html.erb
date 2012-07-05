@@ -1,5 +1,6 @@
 <h1>Tasks</h1>
 
 <%= render partial: "tasks", locals: { tasks: @tasks } %>
+<%= will_paginate @tasks %>
 
 <%= link_to 'New', new_task_path, :class => 'btn btn-primary' %>
