@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = Document.where(
-      case_or_person_association(:document) => params[case_or_person_association(:document)])
+      tasks_documents_owner_id(:document) => params[tasks_documents_owner_id(:document)])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new.json
   def new
     @document = Document.new(
-      case_or_person_association(:document) => params[case_or_person_association(:document)])
+      tasks_documents_owner_id(:document) => params[tasks_documents_owner_id(:document)])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -31,11 +31,11 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.save
         format.html {
-          redirect_to case_or_person_assoc_path(:document), notice: 'Document was successfully created.'
+          redirect_to tasks_documents_owner_path(:document), notice: 'Document was successfully created.'
         }
         format.json { render json: @document, status: :created, location: @document }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to :back }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
     end

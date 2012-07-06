@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705003938) do
+ActiveRecord::Schema.define(:version => 20120706090725) do
 
   create_table "cases", :force => true do |t|
     t.string   "title"
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(:version => 20120705003938) do
     t.integer "person_id"
     t.integer "case_id"
     t.string  "document"
+    t.integer "opportunity_id"
+  end
+
+  create_table "opportunities", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "responsible_id"
+    t.integer  "user_id"
+    t.decimal  "budget",         :precision => 10, :scale => 2
+    t.integer  "probability"
+    t.datetime "expires_at"
+    t.boolean  "closed"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
+
+  create_table "opportunities_people", :force => true do |t|
+    t.integer "person_id"
+    t.integer "opportunity_id"
   end
 
   create_table "people", :force => true do |t|
@@ -53,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20120705003938) do
     t.boolean  "closed"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "opportunity_id"
   end
 
   create_table "users", :force => true do |t|

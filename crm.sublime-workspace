@@ -667,7 +667,7 @@
 		"find_history":
 		[
 			"association",
-			"case_or_person_association",
+			"tasks_documents_owner_id",
 			"(case",
 			"_case",
 			"div",

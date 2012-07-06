@@ -1,7 +1,7 @@
-class CaseOrPersonPresenceValidator < ActiveModel::Validator
+class CaseOppPersonPresenceValidator < ActiveModel::Validator
   def validate(record)
-    unless record.case or record.document
-      record.errors[:base] << "should have associated contact or case"
+    if record.case_id.blank? and record.person_id.blank? and record.opportunity_id.blank?
+      record.errors[:base] << "should have associated contact, case or opportunity"
     end
   end
 end
@@ -9,10 +9,11 @@ end
 class Document < ActiveRecord::Base
   belongs_to :case
   belongs_to :person
+  belongs_to :opportunity
 
   mount_uploader :document, DocumentUploader
 
   validates :document, presence: true
-  validates_with CaseOrPersonPresenceValidator, :fields => [:case_id, :person_id]
+  validates_with CaseOppPersonPresenceValidator, :fields => [:case_id, :person_id]
 end
 

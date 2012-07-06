@@ -11,7 +11,7 @@
     <% contacts.each do |person| %>
       <tr>
         <td><%= link_to person.name + " " + person.surname, person_path(person) %></td>
-        <td><%= person.email %></td>
+        <td><%= mail_to person.email %></td>
         <td>
           <%= link_to 'Edit', edit_person_path(person), :class => 'btn btn-mini' %>
           <%= link_to 'Delete', person_path(person), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

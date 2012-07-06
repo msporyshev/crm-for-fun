@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  person_id: 1
+  description: MyText
+  responsible_id: 1
+  user_id: 1
+  budget: 9.99
+  probability: 1
+
+two:
+  title: MyString
+  person_id: 1
+  description: MyText
+  responsible_id: 1
+  user_id: 1
+  budget: 9.99
+  probability: 1

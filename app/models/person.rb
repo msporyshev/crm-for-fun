@@ -9,6 +9,7 @@ class Person < ActiveRecord::Base
     allow_nil: true
 
   belongs_to :user
+  has_and_belongs_to_many :opportunities
   has_many :tasks
   has_many :documents
   has_and_belongs_to_many :cases

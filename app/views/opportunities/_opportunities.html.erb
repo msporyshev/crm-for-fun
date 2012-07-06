@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+
+<% opportunities.each do |opportunity| %>
+  <tr>
+    <td>
+        <%= link_to opportunity.title, opportunity %><br>
+        <%= link_to opportunity.responsible_user.name + " " + opportunity.responsible_user.surname, user_path(opportunity.responsible_user) %>
+    </td>
+    <td>
+        <b>Expire Date</b>
+        <%= opportunity.expires_at %>
+    </td>
+    <td><%= number_to_currency opportunity.budget %></td>
+    <td>
+        <%= link_to 'Edit', edit_opportunity_path(opportunity), class: "btn btn-mini" %>
+        <%= link_to 'Delete', opportunity, confirm: 'Are you sure?', method: :delete, class: "btn btn-mini btn-danger" %>
+    </td>
+  </tr>
+<% end %>
+</table>

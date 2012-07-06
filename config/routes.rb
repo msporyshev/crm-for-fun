@@ -10,7 +10,12 @@ CrmApp::Application.routes.draw do
     resources :documents
   end
 
-  resources :users, :sessions, :people, :tasks, :documents
+  resources :opportunities do
+    resources :tasks
+    resources :documents
+  end
+
+  resources :users, :sessions, :people, :tasks, :documents, :opportunities
 
   # match ':parent/:parent_id/'
 

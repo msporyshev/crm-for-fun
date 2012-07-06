@@ -26,17 +26,18 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def case_or_person_assoc_path(model_name)
+    def tasks_documents_owner_path(model_name)
       methods = { :case_id => method(:case_path),
         :person_id => method(:person_path),
+        :opportunity_id => method(:opportunity_path),
         :none => method(:tasks_path) }
 
-      methods[case_or_person_association(model_name)].
-        call(params[model_name][case_or_person_association(model_name)])
+      methods[tasks_documents_owner_id(model_name)].
+        call(params[model_name][tasks_documents_owner_id(model_name)])
     end
 
-    def case_or_person_association(model_name)
-      [:case_id, :person_id].each { |e|
+    def tasks_documents_owner_id(model_name)
+      [:case_id, :opportunity_id, :person_id].each { |e|
         return e if params[e]
         return e if !params[model_name].nil? and !params[model_name][e].blank?
       }

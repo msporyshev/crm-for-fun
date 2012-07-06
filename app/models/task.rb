@@ -3,6 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
   belongs_to :person
   belongs_to :case
+  belongs_to :opportunity
 
   validates :title, presence: true
   validates :responsible_id, presence: true

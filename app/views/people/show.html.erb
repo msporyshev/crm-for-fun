@@ -9,7 +9,7 @@
 
     <p>
       <b>Email</b><br>
-      <%= @person.email %>
+      <%= mail_to @person.email %>
     </p>
 
     <p>
@@ -19,7 +19,7 @@
 
     <p>
       <b>Phone Number</b><br>
-      <%= @person.phone_num %>
+      <%= number_to_phone @person.phone_num %>
     </p>
 
     <p>

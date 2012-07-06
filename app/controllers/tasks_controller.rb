@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.json
   def new
     @task = @document = Task.new(
-      case_or_person_association(:task) => params[case_or_person_association(:task)])
+      tasks_documents_owner_id(:task) => params[tasks_documents_owner_id(:task)])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,10 +48,10 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to case_or_person_assoc_path(:task), notice: 'Task was successfully created.' }
+        format.html { redirect_to tasks_documents_owner_path(:task), notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to :back }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end

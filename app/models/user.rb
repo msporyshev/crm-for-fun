@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_protected :role, :expires_at, :salt, :hashed_pass
+  attr_protected :role, :expires_at, :salt, :hashed_pass, :secure_id
 
   SESSION_TIME_MIN = 100000.to_i
 
@@ -17,9 +17,11 @@ class User < ActiveRecord::Base
     :length => { :within => 6..40 }
 
   has_many :people
-  has_many :tasks
   has_many :cases
+  has_many :tasks
   has_many :given_tasks, class_name: "Task", foreign_key: "responsible_id"
+  has_many :opportunities
+  has_many :given_opportunities, class_name: "Task", foreign_key: "responsible_id"
 
   attr_accessor :password_confirmation
   attr_reader :password
