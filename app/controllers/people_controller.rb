@@ -2,7 +2,8 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @contacts = current_user.people
+    @contacts = Person.
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,8 @@ class PeopleController < ApplicationController
   # GET /people/1.json
   def show
     @person = Person.find(params[:id])
+    @tasks = @person.tasks.
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # show.html.erb

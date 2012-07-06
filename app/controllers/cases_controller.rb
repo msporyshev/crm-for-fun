@@ -2,7 +2,9 @@ class CasesController < ApplicationController
   # GET /cases
   # GET /cases.json
   def index
-    @cases = current_user.cases.order("closed DESC, created_at ASC")
+    @cases = Case.
+      order("closed DESC, created_at ASC").
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,8 @@ class CasesController < ApplicationController
   # GET /cases/1.json
   def show
     @case = Case.find(params[:id])
+    @tasks = @case.tasks.
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # show.html.erb

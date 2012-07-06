@@ -18,4 +18,9 @@
 
 $(function() {
   $(".ch_select").chosen({})
+
+  $('#cases_tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+  })
 });

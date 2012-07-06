@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  PAGE_COUNT = 5
+
   protected
 
     def current_user=(user)

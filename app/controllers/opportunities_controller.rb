@@ -2,7 +2,9 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities
   # GET /opportunities.json
   def index
-    @opportunities = @cases = current_user.opportunities.order("closed DESC, created_at ASC")
+    @opportunities = Opportunity.
+      order("closed DESC, created_at ASC").
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,7 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities/1.json
   def show
     @opportunity = Opportunity.find(params[:id])
+    @tasks = @opportunity.tasks.paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # show.html.erb

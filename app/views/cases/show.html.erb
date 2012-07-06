@@ -6,6 +6,15 @@
 </p>
 
 <p>
+  <b>Status</b><br>
+  <% if @case.closed %>
+    Closed
+  <% else %>
+    Opened
+  <% end %>
+</p>
+
+<p>
   <h3>Participants</h3>
   <% @case.people.each do |p| %>
     <%= link_to p.name + " " + p.surname, person_path(p) %><br>
@@ -14,7 +23,7 @@
 
 <p>
   <h3>Tasks</h3>
-  <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @case.tasks} %>
+  <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @tasks} %>
 </p>
 
 <p>
@@ -22,14 +31,6 @@
   <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @case.documents} %>
 </p>
 
-<p>
-  <b>Status</b><br>
-  <% if @case.closed %>
-    <p>Closed</p>
-  <% else %>
-    <p>Opened</p>
-  <% end %>
-</p>
 
 <div class="form-actions">
   <%= link_to 'Add Task', new_case_task_path(@case), :class => 'btn' %>
