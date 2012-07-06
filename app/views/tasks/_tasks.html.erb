@@ -23,6 +23,11 @@
           <%= task.expires_at %>
         </td>
         <td>
+          <% if task.opportunity %>
+            Opportunity:
+            <%= link_to " " + task.opportunity.title, opportunity_path(task.opportunity) %>
+            <br>
+          <% end %>
           <% if task.case %>
             Case:
             <%= link_to " " + task.case.title, case_path(task.case) %>
