@@ -7,7 +7,7 @@ jQuery ->
     () ->
       $.ajax({
         type: 'PUT'
-        url: 'tasks/' + this.id,
+        url: '/tasks/' + this.id + '.json',
         data: {
           task: { closed: this.value }
         }
