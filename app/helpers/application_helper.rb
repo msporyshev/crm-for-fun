@@ -1,12 +1,13 @@
 module ApplicationHelper
 
   MAIN_APP_SUBD_COUNT = 1
-  CRM_SUBDOMAIN_INDEX = 1
 
   def with_subdomain(subdomain)
     subdomain = (subdomain || "")
     subdomain += "." unless subdomain.empty?
-    [subdomain, request.domain].join
+    app_subd = app_subdomain
+    app_subd += "." unless app_subd.empty?
+    [subdomain, app_subd, request.domain].join
   end
 
   def url_for(options = nil)
@@ -16,8 +17,15 @@ module ApplicationHelper
     super
   end
 
+  def app_subdomain
+    return "" if MAIN_APP_SUBD_COUNT
+    subds = request.subdomain.split(".")
+    subds[-MAIN_APP_SUBD_COUNT, -1].join(".")
+  end
+
   def crm_subdomain
     subds = request.subdomain.split(".")
-    subds[-MAIN_APP_SUBD_COUNT - CRM_SUBDOMAIN_INDEX]
+    return "" if subds.count == MAIN_APP_SUBD_COUNT
+    subd = request.subdomain["."] ? [/\A(.+)\./] : request.subdomain
   end
 end
