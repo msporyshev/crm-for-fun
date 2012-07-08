@@ -6,8 +6,8 @@
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
 
-    <% as = request.subdomain.blank? ? :string : :hidden %>
-    <%= f.input :subdomain, input_html: {value: request.subdomain}, as: as %>
+    <% as = crm_subdomain.blank? ? :string : :hidden %>
+    <%= f.input :subdomain, input_html: {value: crm_subdomain}, as: as %>
 
     <%= f.input :name %>
     <%= f.input :surname %>

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.where(:subdomain => request.subdomain).
+    @users = User.where(:subdomain => crm_subdomain).
       paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.role = request.subdomain.blank? ? "admin" : "user"
+    @user.role = crm_subdomain.blank? ? "admin" : "user"
 
     respond_to do |format|
       if @user.save

@@ -51,6 +51,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_root_with_correct_subdomain_if_subdomain_is_invalid
-    redirect_to root_url(:subdomain => current_user.subdomain) if current_user.subdomain != request.subdomain
+    redirect_to root_url(:subdomain => current_user.subdomain) if current_user.subdomain != crm_subdomain
   end
 end
