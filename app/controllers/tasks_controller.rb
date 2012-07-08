@@ -27,7 +27,7 @@ class TasksController < ApplicationController
   # GET /tasks/new.json
   def new
     id = tasks_documents_owner_id(:task)
-    if id = :none
+    if id == :none
       @task = Task.new
     else
       @task = Task.new(tasks_documents_owner_id(:task) => params[tasks_documents_owner_id(:task)])
