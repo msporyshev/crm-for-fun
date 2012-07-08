@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:s_id, :domain => ".lvh.me")
+    cookies.delete(:s_id, :domain => "HOSTING_DOMAIN_NAME")
 
     if current_user
       current_user.expires_at = Time.now
