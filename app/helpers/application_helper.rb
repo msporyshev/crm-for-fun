@@ -26,6 +26,6 @@ module ApplicationHelper
   def crm_subdomain
     subds = request.subdomain.split(".")
     return "" if subds.count == MAIN_APP_SUBD_COUNT
-    subd = request.subdomain["."] ? [/\A(.+)\./] : request.subdomain
+    subd = request.subdomain["."] ? request.subdomain[/\A(.+)\./, 0].chop : request.subdomain
   end
 end
