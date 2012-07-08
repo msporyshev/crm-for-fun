@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  HOSTING_DOMAIN_NAME = ".lvh.me"
+  HOSTING_DOMAIN_NAME = ".gigimus.herokuapp.com"
 
   include ApplicationHelper
 
