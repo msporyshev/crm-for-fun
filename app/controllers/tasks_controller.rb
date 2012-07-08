@@ -26,8 +26,12 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.json
   def new
-    @task = @document = Task.new(
-      tasks_documents_owner_id(:task) => params[tasks_documents_owner_id(:task)])
+    id = tasks_documents_owner_id(:task)
+    if id = :none
+      @task = Task.new
+    else
+      @task = Task.new(tasks_documents_owner_id(:task) => params[tasks_documents_owner_id(:task)])
+    end
 
     respond_to do |format|
       format.html # new.html.erb
