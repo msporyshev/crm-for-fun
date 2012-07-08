@@ -11,17 +11,27 @@ class User < ActiveRecord::Base
     :presence => true,
     :uniqueness => { :case_sensitive => false },
     :format => { :with => email_regex }
+
+  validates :subdomain,
+    :presence => true,
+    :exclusion => { :in => %w(www us ca jp), :message => "Subdomain %{value} is reserved." },
+    :format => { :with => /\A[a-z]+\z/ }
+
+  validates :subdomain,
+    :uniqueness => { :case_sensitive => false },
+    :if => lambda { |record| record.role == "admin" }
+
   validates :password,
     :presence => true,
     :confirmation => true,
     :length => { :within => 6..40 }
 
-  has_many :people
-  has_many :cases
-  has_many :tasks
-  has_many :given_tasks, class_name: "Task", foreign_key: "responsible_id"
-  has_many :opportunities
-  has_many :given_opportunities, class_name: "Task", foreign_key: "responsible_id"
+  has_many :people, :dependent => :destroy
+  has_many :cases, :dependent => :destroy
+  has_many :tasks, :dependent => :destroy
+  has_many :given_tasks, class_name: "Task", foreign_key: "responsible_id", :dependent => :destroy
+  has_many :opportunities, :dependent => :destroy
+  has_many :given_opportunities, class_name: "Task", foreign_key: "responsible_id", :dependent => :destroy
 
   attr_accessor :password_confirmation
   attr_reader :password

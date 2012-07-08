@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   skip_before_filter :redirect_to_sign_in_page_if_not_signed_in, :only => [:new, :create]
+  skip_before_filter :redirect_to_root_with_correct_subdomain_if_subdomain_is_invalid, :only => [:new, :create]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(page: params[:page], per_page: PAGE_COUNT)
+    @users = User.where(:subdomain => request.subdomain).
+      paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,10 +45,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.role = request.subdomain.blank? ? "admin" : "user"
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to root_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

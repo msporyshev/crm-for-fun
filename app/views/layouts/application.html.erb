@@ -16,7 +16,9 @@
         <div class="container">
           <%= link_to "CRM", root_url, :class => "brand" %>
           <% if current_user %>
-            <%= render "navbar_manager" %>
+            <ul class="nav">
+              <%= render(current_user.role == "user" ? "navbar_user_fields" : "navbar_manager_fields") %>
+            </ul>
             <ul id="user_header" class="nav pull-right">
               <li>
                 <%= link_to "Signed in as #{current_user.email}", user_path(current_user) %>

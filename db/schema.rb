@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706090725) do
+ActiveRecord::Schema.define(:version => 20120707095301) do
 
   create_table "cases", :force => true do |t|
     t.string   "title"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20120706090725) do
     t.integer "user_id"
     t.string  "name"
     t.string  "surname"
+    t.string  "subdomain"
     t.string  "email"
     t.string  "address"
     t.string  "phone_num"
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20120706090725) do
     t.string   "salt"
     t.string   "role"
     t.datetime "expires_at"
+    t.string   "subdomain"
   end
 
 end
