@@ -14,7 +14,7 @@
 
         <%= f.association :responsible_user,
           label: "Responsible User",
-          collection: User.all.map { |u| [u.name + " " + u.surname, u.id] } ,
+          collection: User.by_subdomain(current_user.subdomain).map { |u| [u.name + " " + u.surname, u.id] } ,
           include_blank: false %>
 
         <%= f.input :expires_at, input_html: { class: "span1" }  %>

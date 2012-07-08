@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_filter :redirect_to_sign_in_page_if_not_signed_in, :only => [:new, :create]
   skip_before_filter :redirect_to_root_with_correct_subdomain_if_subdomain_is_invalid, :only => [:new, :create]
+  before_filter :redirect_to_root_if_user_has_no_access
 
   # GET /users
   # GET /users.json
@@ -84,5 +85,12 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  protected
+
+  def redirect_to_root_if_user_has_no_access
+    return if params[:id].nil?
+    redirect_to root_url if current_user.id != params[:id].to_i and current_user.role != "admin"
   end
 end

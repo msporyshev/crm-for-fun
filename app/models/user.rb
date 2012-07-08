@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
     (user && user.expires_at > Time.now.utc) ? user : nil
   end
 
+  def User.by_subdomain(subdomain)
+    where(:subdomain => subdomain)
+  end
+
   private
 
     def User.set_session_params(user)
