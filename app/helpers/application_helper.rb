@@ -18,9 +18,11 @@ module ApplicationHelper
   end
 
   def app_subdomain
-    return "" if MAIN_APP_SUBD_COUNT
+    return "" if MAIN_APP_SUBD_COUNT == 0
     subds = request.subdomain.split(".")
-    subds[-MAIN_APP_SUBD_COUNT, -1].join(".")
+
+    range = Range.new(subds.count - MAIN_APP_SUBD_COUNT, subds.count - 1)
+    subds[range].join(".")
   end
 
   def crm_subdomain
