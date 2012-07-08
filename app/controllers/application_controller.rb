@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  HOSTING_DOMAIN_NAME = '.gigimus.herokuapp.com'
+  HOSTING_DOMAIN_NAME = ".lvh.me"
 
   include ApplicationHelper
 
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def sign_in(user)
-    cookies.permanent[:s_id] = {value: user.secure_id, :domain => "HOSTING_DOMAIN_NAME"}
+    cookies.permanent[:s_id] = {value: user.secure_id, :domain => HOSTING_DOMAIN_NAME}
     current_user = user
   end
 
