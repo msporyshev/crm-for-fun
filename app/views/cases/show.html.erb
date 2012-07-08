@@ -14,22 +14,31 @@
   <% end %>
 </p>
 
-<p>
-  <h3>Participants</h3>
-  <% @case.people.each do |p| %>
-    <%= link_to p.name + " " + p.surname, person_path(p) %><br>
-  <% end %>
-</p>
+<ul class="nav nav-tabs" id="cases_tabs">
+  <li class="active"><a href="#participants">Participants</a></li>
+  <li><a href="#tasks">Tasks</a></li>
+  <li><a href="#documents">Documents</a></li>
+</ul>
 
-<p>
-  <h3>Tasks</h3>
-  <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @tasks} %>
-</p>
 
-<p>
-  <h3>Documents</h3>
-  <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @case.documents} %>
-</p>
+<div class="tab-content">
+  <div class="tab-pane active" id="participants">
+      <h3>Participants</h3>
+      <% @case.people.each do |p| %>
+        <%= link_to p.name + " " + p.surname, person_path(p) %><br>
+      <% end %>
+  </div>
+  <div class="tab-pane" id="tasks">
+      <h3>Tasks</h3>
+      <%= render :partial => "tasks/tasks.html.erb", :locals =>  {tasks: @tasks} %>
+  </div>
+  <div class="tab-pane" id="documents">
+      <h3>Documents</h3>
+      <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @case.documents} %>
+  </div>
+</div>
+
+
 
 
 <div class="form-actions">

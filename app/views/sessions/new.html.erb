@@ -1,19 +1,20 @@
 
-<%= form_tag sessions_path, :class => "form-horizontal" do %>
-  <fieldset>
-    <legend>Sign In</legend>
-    <div class="control-group">
-      <%= label_tag :email, nil, :class => 'control-label' %>
-      <div class="controls">
-        <%= text_field_tag :email, params[:email], :class => "text_field" %>
+
+  <%= form_tag sessions_path, :class => "form-horizontal" do %>
+    <fieldset>
+      <legend>Sign In</legend>
+      <div class="control-group">
+        <%= label_tag :email, nil, :class => 'control-label' %>
+        <div class="controls">
+          <%= text_field_tag :email, params[:email], :class => "text_field" %>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <%= label_tag :password, nil,  :class => "control-label" %>
-      <div class="controls">
-        <%= password_field_tag :password, nil, :class => "text_field" %>
+      <div class="control-group">
+        <%= label_tag :password, nil,  :class => "control-label" %>
+        <div class="controls">
+          <%= password_field_tag :password, nil, :class => "text_field" %>
+        </div>
       </div>
-    </div>
-    <div class="form-actions"><%= submit_tag "Sign In", :class => "brn btn-primary" %>
-  </fieldset>
-<% end %>
+      <div class="form-actions"><%= submit_tag "Sign In", :class => "brn btn-primary" %>
+    </fieldset>
+  <% end %>

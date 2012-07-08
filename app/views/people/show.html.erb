@@ -1,44 +1,47 @@
 <h1>Contact</h1>
-<div class="row">
-  <div class="span3">
-    <p>
-      <b>Name</b><br>
-      <%= @person.name %>
-      <%= @person.surname %>
-    </p>
 
-    <p>
-      <b>Email</b><br>
-      <%= mail_to @person.email %>
-    </p>
+<p>
+  <b>Name</b><br>
+  <%= @person.name %>
+  <%= @person.surname %>
+</p>
 
-    <p>
-      <b>Address</b><br>
-      <%= @person.address %>
-    </p>
+<p>
+  <b>Email</b><br>
+  <%= mail_to @person.email %>
+</p>
 
-    <p>
-      <b>Phone Number</b><br>
-      <%= number_to_phone @person.phone_num %>
-    </p>
+<p>
+  <b>Address</b><br>
+  <%= @person.address %>
+</p>
 
-    <p>
-      <b>Description</b><br>
-      <%= @person.description %>
-    </p>
-  </div>
-  <div class="span9">
-    <p>
+<p>
+  <b>Phone Number</b><br>
+  <%= number_to_phone @person.phone_num %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @person.description %>
+</p>
+
+<ul class="nav nav-tabs" id="cases_tabs">
+  <li class="active"><a href="#tasks">Tasks</a></li>
+  <li><a href="#documents">Documents</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="tasks">
       <h3>Tasks</h3>
       <%= render partial: "tasks/tasks.html.erb", locals: {tasks: @tasks} %>
-    </p>
+  </div>
+  <div class="tab-pane" id="documents">
+    <h3>Documents</h3>
+    <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @person.documents} %>
   </div>
 </div>
 
-<p>
-  <h3>Documents</h3>
-  <%= render :partial => "documents/documents.html.erb", :locals =>  {documents: @person.documents} %>
-</p>
 
 <div class="form-actions">
   <%= link_to "Add Document", new_person_document_path(@person), class: "btn" %>
