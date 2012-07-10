@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  validates :role, presence: true
   validates :name, :presence => true, :length => { :maximum => 40 }
   validates :surname, :presence => true, :length => { :maximum => 40 }
   validates :email,
@@ -29,8 +30,13 @@ class User < ActiveRecord::Base
   has_many :people, :dependent => :destroy
   has_many :cases, :dependent => :destroy
   has_many :tasks, :dependent => :destroy
-  has_many :given_tasks, class_name: "Task", foreign_key: "responsible_id", :dependent => :destroy
   has_many :opportunities, :dependent => :destroy
+
+  has_and_belongs_to_many :visible_people, class_name: "Person"
+  has_and_belongs_to_many :visible_cases, class_name: "Case"
+  has_and_belongs_to_many :visible_opportunities, class_name: "Opportunity"
+
+  has_many :given_tasks, class_name: "Task", foreign_key: "responsible_id", :dependent => :destroy
   has_many :given_opportunities, class_name: "Task", foreign_key: "responsible_id", :dependent => :destroy
 
   attr_accessor :password_confirmation
@@ -43,6 +49,35 @@ class User < ActiveRecord::Base
 
     self.salt = generate_salt
     self.hashed_pass = User.encrypt_password(password, salt)
+  end
+
+  def accessible_tasks
+    return accessible_by_subd(Task) if role == "admin"
+
+  end
+
+  def accessible_cases
+    return accessible_by_subd(Case) if CasesUsers.by_subdomain(subdomain).blank? or
+      role == "admin"
+    Case.joins(:users).where("users.id = :id OR cases.user_id = :id", {id: id})
+  end
+
+  def accessible_people
+    return accessible_by_subd(Person) if PeopleUsers.by_subdomain(subdomain).blank?  or
+      role == "admin"
+    Person.joins(:users).where("users.id = :id OR people.user_id = :id", {id: id})
+  end
+
+  def accessible_opportunities
+    return accessible_by_subd(Opportunity) if OpportunitiesUsers.by_subdomain(subdomain).blank?  or
+      role == "admin"
+    Opportunity.joins(:users).
+      where("users.id = :id OR opportunities.user_id = :id OR opportunities.responsible_id = :id",
+          {id: id})
+  end
+
+  def accessible_by_subd(model_const)
+    model_const.by_subdomain(subdomain)
   end
 
   def User.authenticate(email, password)

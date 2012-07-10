@@ -9,6 +9,12 @@
         <%= f.input :email, :placeholder => 'user@domain.com'  %>
         <%= f.input :address %>
         <%= f.input :phone_num, label: "Phone Number" %>
+        <% if current_user.role == "admin" %>
+          <%= f.association :users,
+            label: "Restrict access to this case",
+            input_html: {class: "ch_select"},
+            collection: User.by_subdomain(current_user.subdomain).map { |u| [u.name + " " + u.surname, u.id] } %>
+        <% end -%>
       </div>
       <div class="span3">
         <%= f.input :description %>

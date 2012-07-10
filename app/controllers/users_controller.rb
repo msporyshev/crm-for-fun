@@ -90,7 +90,6 @@ class UsersController < ApplicationController
   protected
 
   def redirect_to_root_if_user_has_no_access
-    return if params[:id].nil?
     redirect_to root_url if current_user.id != params[:id].to_i and current_user.role != "admin"
   end
 end

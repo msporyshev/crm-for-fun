@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @contacts = current_user.people.
+    @contacts = current_user.accessible_people.
       paginate(page: params[:page], per_page: PAGE_COUNT)
 
     respond_to do |format|

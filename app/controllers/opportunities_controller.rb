@@ -2,7 +2,7 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities
   # GET /opportunities.json
   def index
-    @opportunities = Opportunity.
+    @opportunities = current_user.accessible_opportunities.
       order("closed DESC, created_at ASC").
       paginate(page: params[:page], per_page: PAGE_COUNT)
 

@@ -15,7 +15,7 @@
         <%= f.association :people,
           label: "Paticipants",
           input_html: {class: "ch_select"},
-          collection: current_user.people.map { |p| [p.name + " " + p.surname, p.id] } %>
+          collection: current_user.accessible_people.map { |p| [p.name + " " + p.surname, p.id] } %>
 
         <%= f.association :responsible_user,
             label: "Responsible User",
@@ -35,6 +35,13 @@
         </div>
 
         <%= f.input :expires_at, input_html: { class: "span1" } %>
+
+        <% if current_user.role == "admin" %>
+          <%= f.association :users,
+            label: "Restrict access to this case",
+            input_html: {class: "ch_select"},
+            collection: User.by_subdomain(current_user.subdomain).map { |u| [u.name + " " + u.surname, u.id] } %>
+        <% end -%>
       </div>
       <%= f.input :description, input_html: { class: "span6" }  %>
     </div>

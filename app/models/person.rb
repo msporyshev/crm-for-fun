@@ -13,4 +13,9 @@ class Person < ActiveRecord::Base
   has_many :tasks
   has_many :documents
   has_and_belongs_to_many :cases
+  has_and_belongs_to_many :users
+
+  def self.by_subdomain(subdomain)
+    joins(:user).where(users: {subdomain: subdomain})
+  end
 end

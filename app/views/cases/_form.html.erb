@@ -2,12 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
+    <div class="row">
+      <div class="span1">
+        <%= f.input :closed  %>
+      </div>
+      <%= f.input :title %>
+    </div>
     <%= f.association :people,
       label: "Paticipants",
       input_html: {class: "ch_select"},
-      collection: current_user.people.map { |p| [p.name + " " + p.surname, p.id] } %>
-    <%= f.input :closed  %>
+      collection: current_user.accessible_people.map { |p| [p.name + " " + p.surname, p.id] } %>
+
+    <% if current_user.role == "admin" %>
+      <%= f.association :users,
+        label: "Restrict access to this case",
+        input_html: {class: "ch_select"},
+        collection: User.by_subdomain(current_user.subdomain).map { |u| [u.name + " " + u.surname, u.id] } %>
+    <% end -%>
   </div>
 
   <div class="form-actions">

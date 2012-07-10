@@ -2,7 +2,7 @@ class CasesController < ApplicationController
   # GET /cases
   # GET /cases.json
   def index
-    @cases = Case.
+    @cases = current_user.accessible_cases.
       order("closed DESC, created_at ASC").
       paginate(page: params[:page], per_page: PAGE_COUNT)
 
